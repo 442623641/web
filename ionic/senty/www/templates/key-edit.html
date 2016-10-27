@@ -1,0 +1,96 @@
+ <ion-modal-view ng-controller="KeysEditCtrl"> 
+ <ion-header-bar  class="bar-senty">
+  <button class="button button-clear button-light button-icon icon ion-ios-close-empty" 
+        ng-click="closeModal('editModal')">
+        </button>
+
+   <div class="title title-center header-item">
+   <select  
+     ng-model="activity.themeIndex"  
+     ng-change="themeChange()">
+    <option value={{$index}}
+              ng-repeat="item in keys.myKeys">
+              {{item.ThemeName}}
+       <option selected value=-1>新建分组</option>
+    </select>
+    <!-- for ios -->
+    <!-- <i class="ion-arrow-down-b icon"></i> -->
+  </div>
+ </ion-header-bar>
+  <ion-content>
+  <div class="list">
+      <div class="item item-input "
+        ng-if="activity.themeIndex<0">
+        <span class="input-label color-senty">
+          分组名称
+        </span>
+        <input type="text" 
+        name="themeName" 
+        placeholder="输入分组名称" 
+        ng-model="activity.theme.ThemeName"
+        required
+        ng-maxlength="100">
+      </div>
+
+      <div class="item item-input">
+        <div class="input-label color-senty">
+          主题名称
+        </div>
+         <input type="text" ng-trim="true" 
+          ng-model="activity.item.Title" 
+          required
+          placeholder="输入分组名称"
+          ng-maxlength="100">
+         <button ng-if="!!activity.theme.Items.length"
+           class="icon ion-arrow-down-b button-clear"
+           ng-click="itemChose(activity.theme.Items)">
+         </button>
+      </div>
+      <div class="item item-divider"></div>
+      <ion-toggle 
+        ng-model="activity.item.Public"
+        toggle-class="toggle-balanced">公共主题</ion-toggle>
+      <div class="item item-input item-select">
+        <div class="input-label color-senty">
+          情景模式
+        </div>
+         <select
+          ng-disabled="activity.themeIndex>=0"
+          ng-model="activity.theme.KeyType"
+          ng-options="item.code as item.title for item in key_options">
+        </select>
+      </div>
+      <div class="item item-divider">关键词内容</div>
+      <div class="item item-input item-floating-label" style="padding-left:0">
+        <div ng-if="activity.item.Text" class="button-bar item-floating-row" 
+          ng-class="{'row-active':!!activity.item.Text}">
+          <button class=" button button-small" 
+          ng-click="onSuffix('AND')"> AND </button>
+          <button class="button button-small" 
+          ng-click="onSuffix('OR')"> OR </button>
+          <button class="button button-small" 
+          ng-click="onSuffix('()')"> () </button>
+        </div>
+        <!-- <p></p> -->
+        <textarea style="padding-left:16px" 
+          rows=6 
+          ng-model="activity.item.Text"
+          required
+          placeholder="125字以内">
+        </textarea>
+      </div>
+      </div>
+      <div class="padding">
+        <button class="button bar text-center button-outline button-senty" 
+        ng-click="save()">
+           保 存
+        </button>
+        <button 
+        ng-hide="activity.themeIndex<0" 
+        class="button bar text-center button-block button-outline button-assertive"
+        ng-click="delSheet(activity.theme.Items)">
+         取 消
+       </button>
+     </div>
+    </ion-content>
+</ion-modal-view>

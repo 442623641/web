@@ -1,0 +1,32 @@
+<ion-modal-view ng-controller="SdeliveryCtrl"> 
+    <ion-header-bar>
+      <button class="button button-clear button-light button-icon icon ion-ios-close-empty" 
+      ng-click="hideModal()">
+      </button>
+      <div class="title title-center header-item">
+      事关地</div>
+    </ion-header-bar>
+     <ion-content>
+<ion-list>
+  <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+  <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+	<ion-radio ng-model="choice" value="340000">安徽省</ion-radio>
+	<ion-radio ng-model="choice" value="340100">合肥市</ion-radio>
+	<ion-radio ng-model="choice" value="340600">淮北市</ion-radio>
+	<ion-radio ng-model="choice" value="341600">亳州市</ion-radio>
+	<ion-radio ng-model="choice" value="341300">宿州市</ion-radio>
+	<ion-radio ng-model="choice" value="341200">阜阳市</ion-radio>
+	<ion-radio ng-model="choice" value="340300">蚌埠市</ion-radio>
+	<ion-radio ng-model="choice" value="340400">淮南市</ion-radio>
+	<ion-radio ng-model="choice" value="341100">滁州市</ion-radio>
+	<ion-radio ng-model="choice" value="341500">六安市</ion-radio>
+	<ion-radio ng-model="choice" value="340200">芜湖市</ion-radio>
+	<ion-radio ng-model="choice" value="340500">马鞍山市</ion-radio>
+	<ion-radio ng-model="choice" value="340800">安庆市</ion-radio>
+	<ion-radio ng-model="choice" value="341700">池州市</ion-radio>
+	<ion-radio ng-model="choice" value="340700">铜陵市</ion-radio>
+	<ion-radio ng-model="choice" value="341800">宣城市</ion-radio>
+	<ion-radio ng-model="choice" value="341000">黄山市</ion-radio>
+</ion-list>
+   </ion-content>
+</ion-modal-view>

@@ -1,0 +1,155 @@
+<ion-view style="background: #fff;">
+ <!-- <ion-header-bar style="background: transparent;">
+   <ion-nav-button 
+   class="button button-clear button-light ion-ios-close-empty button-outline button-circle icon" 
+   style="background: rgba(0,0,0,0.7);">
+    </ion-nav-button>
+  </ion-header-bar> -->
+  <div id="elastic" 
+  class="elastic-image" 
+  style="background-image: url('{{setup.photo}}')">
+  </div>
+  <ion-content 
+  elastic-image="elastic" class="padding" 
+  style="background: transparent;">
+ <!--  <div class="the-content">
+        <h2>{{setup.title}}</h2>
+        <p></p>
+      <p>Note: This implementation works by using a combination of background-size: cover and a variable height. This is not great performance wise. It should be re-written using only GPU-friendly properties (i.e. Translate, Scale) so the browser won't have to re-paint on scroll.</p>
+      <p>It should also be improved by using Request Animation Frame for the animation.</p>
+      <div class="list">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+      </div>
+    </div>
+ -->
+    <div class="content__wrapper wrap the-content">
+        <!-- <div class="recipe-header">
+          <h2>{{setup.title}}</h2>
+          <div class="content-desc"></div>
+          <div class="button-bar ">
+                <a href="javascript:void(0)" 
+                class="button button-clear ion-ios-heart-outline button-stable icon button-icon">
+                {{setup.favo_count}}
+                 </a>
+                <a href="javascript:void(0)" class="button button-icon button-clear ion-ios-box-outline ng-binding button-stable icon"
+                 style="margin-left: 10px;">
+                 {{setup.clicks}}
+                </a>
+            </div>
+        </div> -->
+    <div class="recipe-header">
+      <h1 class="recipe-title">纯真玛丽</h1>
+      <div class="button-bar ">
+                <a href="javascript:void(0)" 
+                class="button button-clear ion-ios-heart-outline button-stable icon button-icon">
+                {{setup.favo_count}}
+                 </a>
+                <a href="javascript:void(0)" class="button button-icon button-clear ion-ios-box-outline ng-binding button-stable icon"
+                 style="margin-left: 10px;">
+                 {{setup.clicks}}
+                </a>
+            </div>
+    </div>
+    <div class="recipe-author">
+      <img class="author-image"  src="img/avatar.jpg">
+      <h2 class="author-title">收集,吃货小编</h2>
+      <br>
+      <p class="author-text">„能完美搭配早午餐的美味健康饮品！“</p></div>
+    <div class="recipe-difficulty">
+      <h2>难度</h2>
+      <span>易 👌</span></div>
+    <div class="recipe-time">
+      <div class="col-1">
+        <div class="time-cell" data-time="5">
+          <canvas width="160" height="160"></canvas>
+          <div class="time-container">
+            <div class="time">5</div>
+            <div class="unit">分钟</div></div>
+          <div class="title">准备</div></div>
+      </div>
+      <div class="col-2">
+        <div class="time-cell" data-time="0">
+          <canvas width="160" height="160"></canvas>
+          <div class="time-container">
+            <div class="time">0</div>
+            <div class="unit">分钟</div></div>
+          <div class="title">烘焙时间</div></div>
+      </div>
+      <div class="col-3">
+        <div class="time-cell" data-time="0">
+          <canvas width="160" height="160"></canvas>
+          <div class="time-container">
+            <div class="time">0</div>
+            <div class="unit">分钟</div></div>
+          <div class="title">静置时间</div></div>
+      </div>
+    </div>
+    <div class="recipe-videos">
+      <h2>小贴士视频</h2>
+      <div class="videos-row">
+        <div class="tile-container">
+          <div class="tile-video">
+            <a class="popup-player" href="/zh/shi-pin/ru-he-liang-qu-shi-cai" id="ru-he-liang-qu-shi-cai">
+              <div class="video-tile">
+                <div class="tile-image-container">
+                  <img class="tile-image" src="https://images.kitchenstories.de/howToImages/00_134_HowToMeasure.jpg" alt="如何量取食材" onerror="this.src='https://images.kitchenstories.de/howToImages/00_134_HowToMeasure.jpg'" onabort="this.src='https://images.kitchenstories.de/howToImages/00_134_HowToMeasure.jpg'">
+                  <div class="play-big"></div>
+                </div>
+                <div class="tile-text">如何量取食材</div></div>
+            </a>
+          </div>
+        </div>
+        <div class="tile-container">
+          <div class="tile-video">
+            <a class="popup-player" href="/zh/shi-pin/3-chong-fang-fa-qiao-ji-ning-meng-zhi" id="3-chong-fang-fa-qiao-ji-ning-meng-zhi">
+              <div class="video-tile">
+                <div class="tile-image-container">
+                  <img class="tile-image" src="https://images.kitchenstories.de/howToImages/00_SimpleWayToJuiceLemons.jpg" alt="3种方法巧挤柠檬汁" onerror="this.src='https://images.kitchenstories.de/howToImages/00_SimpleWayToJuiceLemons.jpg'" onabort="this.src='https://images.kitchenstories.de/howToImages/00_SimpleWayToJuiceLemons.jpg'">
+                  <div class="play-big"></div>
+                </div>
+                <div class="tile-text">3种方法巧挤柠檬汁</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-tags">
+      <h2>标签</h2></div>
+  </div>
+  <div class="sticky-recommendation-widget right-col">
+    <h4>更多美味创意</h4>
+    <div class="tile-recommendation">
+      <a href="/zh/shi-pu/xiang-kao-hua-ye-cai">
+        <div class="tile-image-container">
+          <img class="tile-image" src="https://images.kitchenstories.de/recipeImages/22_15_CauliflowerSteak_TitlePicture/22_15_CauliflowerSteak_TitlePicture-icon-landscape-300.jpg" alt="香烤花椰菜" onerror="this.src='https://images.kitchenstories.de/recipeImages/22_15_CauliflowerSteak_TitlePicture.jpg'" onabort="this.src='https://images.kitchenstories.de/recipeImages/22_15_CauliflowerSteak_TitlePicture.jpg'"></div>
+        <div class="tile-text">香烤花椰菜</div></a>
+    </div>
+    <div class="tile-recommendation">
+      <a href="/zh/shi-pu/su-cheng-hua-ye-cai-ta-bo-le-sha-la">
+        <div class="tile-image-container">
+          <img class="tile-image" src="https://images.kitchenstories.de/recipeImages/RP05_26_02_QuickCauliflowerTabouli_TitlePicture/RP05_26_02_QuickCauliflowerTabouli_TitlePicture-icon-landscape-300.jpg" alt="速成花椰菜塔博勒沙拉" onerror="this.src='https://images.kitchenstories.de/recipeImages/RP05_26_02_QuickCauliflowerTabouli_TitlePicture.jpg'" onabort="this.src='https://images.kitchenstories.de/recipeImages/RP05_26_02_QuickCauliflowerTabouli_TitlePicture.jpg'"></div>
+        <div class="tile-text">速成花椰菜塔博勒沙拉</div></a>
+    </div>
+    <div class="tile-recommendation">
+      <a href="/zh/shi-pu/chao-ji-lu-se-si-mu-xue">
+        <div class="tile-image-container">
+          <img class="tile-image" src="https://images.kitchenstories.de/recipeImages/RP03_23_04_superfoodGreenSmoothie_TitlePicture/RP03_23_04_superfoodGreenSmoothie_TitlePicture-icon-landscape-300.jpg" alt="超级绿色思慕雪" onerror="this.src='https://images.kitchenstories.de/recipeImages/RP03_23_04_superfoodGreenSmoothie_TitlePicture.jpg'" onabort="this.src='https://images.kitchenstories.de/recipeImages/RP03_23_04_superfoodGreenSmoothie_TitlePicture.jpg'"></div>
+        <div class="tile-text">超级绿色思慕雪</div></a>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>
