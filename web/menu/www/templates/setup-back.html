@@ -1,0 +1,127 @@
+<ion-view style="background: #fff;">
+ <ion-header-bar style="background: transparent;">
+   <ion-nav-button 
+   class="button button-clear button-light ion-ios-close-empty button-outline button-circle icon" 
+   style="background: rgba(0,0,0,0.7);">
+    </ion-nav-button>
+  </ion-header-bar>
+  <div id="elastic" 
+  class="elastic-image" 
+  style="background-image: url('{{setup.photo}}')">
+  </div>
+  <ion-content 
+  elastic-image="elastic" class="padding" 
+  style="background: transparent;">
+ <!--  <div class="the-content">
+        <h2>{{setup.title}}</h2>
+        <p></p>
+      <p>Note: This implementation works by using a combination of background-size: cover and a variable height. This is not great performance wise. It should be re-written using only GPU-friendly properties (i.e. Translate, Scale) so the browser won't have to re-paint on scroll.</p>
+      <p>It should also be improved by using Request Animation Frame for the animation.</p>
+      <div class="list">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+      </div>
+    </div>
+ -->
+    <div class="content__wrapper wrap the-content">
+        <div class="content-header dotted--bottom">
+          <h2>{{setup.title}}</h2>
+          <div class="content-desc"></div>
+          <div class="button-bar ">
+                <a href="javascript:void(0)" 
+                class="button button-clear ion-ios-heart-outline button-stable icon button-icon">
+                {{setup.favo_count}}
+                 </a>
+                <a href="javascript:void(0)" class="button button-icon button-clear ion-ios-box-outline ng-binding button-stable icon"
+                 style="margin-left: 10px;">
+                 {{setup.clicks}}
+                </a>
+            </div>
+        </div>
+
+        <div class="content__item">
+          <!-- <div class="content__subtitle dotted">
+            <div class="content__item-author">
+              <img class="content__item-avatar" src="img/avatar.jpg">
+              <div class="content__item-name">收集,吃货小编</div>
+            </div>
+            <div class="content__text-block">{{setup.comment}}</div>
+
+          </div> -->
+          <!-- <div class="card"> -->
+            <div class="item item-avatar no-border">
+              <img src="img/avatar.jpg">
+              <h2>收集,吃货小编</h2>
+            </div>
+            <div class="item item-body no-border">
+              <p>
+               {{setup.comment}}
+              </p>
+            </div>
+        <!--  </div> -->
+          <!--          时间难度 -->
+          <div class="recipe__desc dotted">
+
+          <!-- <p class="item no-border"><span>难度:</span> <span style="padding-right: 3rem;">{{setup.class}}</span> <span>时间:</span><span>{{setup.time}}</span> </p> -->
+            <div class="button-bar">
+              <a class="button-clear button button-dark">
+                难度:{{setup.class}}
+              </a>
+              <a class="button-clear button button-dark">
+                时间:{{setup.time}}
+              </a>
+            </div>
+          </div>
+          <div class="recipe-time"><div class="col-1"><div class="time-cell" data-time="20"><canvas width="160" height="160"></canvas><div class="time-container"><div class="time">20</div><div class="unit">分钟</div></div><div class="title">准备</div></div></div><div class="col-2"><div class="time-cell" data-time="25"><canvas width="160" height="160"></canvas><div class="time-container"><div class="time">25</div><div class="unit">分钟</div></div><div class="title">烘焙时间</div></div></div><div class="col-3"><div class="time-cell" data-time="0"><canvas width="160" height="160"></canvas><div class="time-container"><div class="time">0</div><div class="unit">分钟</div></div><div class="title">静置时间</div></div></div></div>
+          <!-- 时间难度结束 -->
+          <!--          食材 -->
+          <div class="ingredients dotted--bottom recipe__text-block no-border">
+            <div class="item no-border">
+            <h4>
+              <span> 食材</span><span>( </span><span>2</span><span></span><span>
+                份数</span><span>)</span>
+            </h4>
+            <table>
+              <tbody>
+                <tr ng-repeat="item in setup.minor">
+                  <td>{{item.note}}</td>
+                  <td>{{item.title}}</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          <!-- 食材结束 -->
+          <!--        步骤 -->
+          <div class="card no-border" ng-repeat="item in setup.setup">
+            <div class="item no-border">
+                <h2>烹饪步骤 {{$index+1}}</h2>
+              </div>
+
+              <div class="item item-body no-border">
+                <img class="full-image" src="{{item.image}}">
+                <p>
+                  {{item.content}}
+                </p>
+              </div>
+            </div>
+            <div class="item" ng-if="setup.tips">
+              <div class="button button-clear ion-ios-lightbulb-outline button-icon button-senty icon">小贴士</div>
+              <p class="item item-body no-border">{{setup.tips}}</p>
+            </div>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

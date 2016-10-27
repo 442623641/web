@@ -1,0 +1,83 @@
+<ion-view>
+    <ion-nav-title class="h1 title">
+    <div class="button-bar">
+            <a class="button button-small button-senty button-header">
+            舆情</a>
+            <a class="button button-small button-light button-header"
+            >有害</a>
+         </div>
+  </ion-nav-title>
+<ion-nav-buttons side="right">
+      <button ng-controller="SearchModalCtrl" 
+      class="button button-icon icon ion-ios-search button-clear button-light" 
+      ng-click="openModal()">
+      </button>
+    </ion-nav-buttons> 
+    </ion-header-bar>
+  <div class="tabs-striped tabs-top tabs-background-light tabs-color-senty">
+    <div class="tabs tabs-slide">
+      <a  class="tab-item"  ng-class="{'active': pageIndex==0}" ng-click="slide(0)">{{data[0].title}}</a>
+      <a class="tab-item" ng-class="{'active': pageIndex==1}" ng-click="slide(1)">{{data[1].title}}</a>
+    </div>
+  </div>
+  <ion-content class="slide-has-header"  locking="false">
+   <ion-refresher
+      pulling-icon="ion-ios-arrow-thin-down"
+      spinner="bubbles"
+      refreshing-text="正在努力加载..."
+      pulling-text="下拉刷新"
+      on-refresh="data[pageIndex].doRefresh(false)">
+    </ion-refresher>
+  <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+          <ion-slide ng-repeat="group in data">
+            <section>
+            <div class="card facebook-card"
+                  ng-repeat="nt in group.items">
+                    <div class="card-header no-avatar">
+                      <div class="facebook-name">{{nt.nickname?nt.nickname:'匿名'}}</div>
+                      <div class="facebook-date">{{nt.timestamp}}</div>
+                    </div>
+                    <div class="card-content">
+                      <div class="card-content-inner" ng-click="openNegativeModal(nt.id)">
+                        <p class="card-content-title">{{nt.title}}</p>
+                        <p class="color-gray">{{nt.content}}</p>
+                        <p style="color:#ccc" 
+                        class="icon ion-ios-location-outline">&nbsp;{{nt.location}}</p>
+                        <div class="chip" ng-if="nt.read_count">
+                          <div class="chip-label">浏览{{nt.read_count}}</div>
+                        </div>
+                        <div class="chip" ng-if="nt.comment_count">
+                          <div class="chip-label">评论{{nt.comment_count}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <a href="#" class="link">
+                      <i class="ion-ios-flag icon"></i>
+                      {{nt.source_name}}</a>
+                      <a href="#" class="link" 
+                      ng-click="openDeliveryModal(nt)">
+                      
+                      <i class="ion-ios-cloud-upload-outline icon"></i>
+                     上报</a>
+                      <a href="#" class="link"
+                      ng-click="openOperateModal(nt,'data[pageIndex].key')">
+                       <i class="ion-hammer icon"></i>处置</a>
+                    </div>
+            </section>
+            <section class="no-result" ng-if="!group.items.length">
+              <div class="noresult">
+                  <i></i>
+                  <span>哎~没有找到</span>
+                  <span>{{message}}</span> 
+              </div>
+          </section>
+          </ion-slide>
+        </ion-slide-box>
+       <!--  <ion-infinite-scroll 
+          ng-if="moredata"
+          on-infinite="data[pageIndex].loadMore()"
+          spinner="bubbles" >
+        </ion-infinite-scroll> -->
+  </ion-content>
+</ion-view>

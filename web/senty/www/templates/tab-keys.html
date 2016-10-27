@@ -1,0 +1,87 @@
+<ion-view view-title="发现">
+<ion-nav-title class="h1 title">
+ <select 
+ ng-model="keysFilter.KeyType"
+ ng-options="item.code as item.title for item in key_options">
+     <option selected value="">全部</option>
+  </select>
+  <!-- for ios -->
+  <!-- <i class="ion-arrow-down-b icon" style="color:#fff"></i> -->
+</ion-nav-title>
+<ion-nav-buttons side="right">
+      <button ng-controller="SearchModalCtrl" 
+      class="button button-icon icon ion-ios-search button-clear button-light" 
+      ng-click="openModal()">
+      </button>
+    </ion-nav-buttons>
+<ion-content  overflow-scroll="false">
+    <ion-refresher
+        pulling-icon="ion-ios-arrow-thin-down"
+        spinner="dots"
+        refreshing-text="正在努力加载..."
+        pulling-text="下拉刷新"
+        on-refresh="doRefresh(false)">
+      </ion-refresher>
+       <section 
+        ng-repeat="group in keys.myKeys|filter:{KeyType:keysFilter.KeyType||undefined} track by $index" class="groups">
+            <div class="group-list">
+                <div class="list">
+                    <div class="item item-divider no-border list-title" ion-affix data-affix-within-parent-with-class="group-list">
+                    <span ng-bind="group.ThemeName"></span>
+                  <!--    <div class="title-add" ng-click="del(group)">
+                     <i class="ion-ios-plus-empty"></i>
+                     </div> -->
+                    </div>
+                    <ul class="resources">
+                      <li ng-repeat="item in group.Items" class="resource--talks">
+                      <a 
+                      href="#/tab/result/{{item.Title}}/{{item.Text}}" 
+                      class="resource__link">
+                          <h1 class="resource__title">
+                            <span ng-bind="item.Title"></span>
+                            <button class="button icon-right icon ion-edit button-clear button-small"
+                            ng-click="edit($parent.$index,group,item)"></span>
+                          </h1>
+                          <line></line>
+                          <p class="resource__summary" ng-bind="item.Text"></p>
+                          <!-- <p class="resource--talks__author"><span>By: </span>Johnny U</p> -->
+                        <div class="recommended" ng-if="item.Public">
+                        <i class="ion-ios-people" style="font-size: 1rem;padding: .3rem .1rem;"></i>公共主题</div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="groups">
+            <div class="group-list">
+                <div class="list">
+                    <div class="item item-divider no-border list-title" 
+                    ion-affix data-affix-within-parent-with-class="group-list">
+                    <span ng-bind="keys.publicKeys.ThemeName"></span>
+                    </div>
+                    <ul class="resources">
+                      <li ng-repeat="item in keys.publicKeys.Items|filter:{KeyType:keysFilter.KeyType||undefined}" class="resource--talks">
+                       <a 
+                      href="#/tab/result/{{item.Title}}/{{item.Text}}" 
+                      class="resource__link">
+                          <h1 class="resource__title" ng-bind="item.Title"></h1>
+                          <p class="resource__summary" ng-bind="item.Text"></p>
+                          <!-- <p class="resource--talks__author"><span>By: </span>Johnny U</p> -->
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="no-result" ng-if="groups">
+            <div class="noresult">
+                <i></i>
+                <span>～.～你还没有关键词哦</span>
+                <span class="button button-outline button-light">现在添加一组吧!</span> 
+            </div>
+       </section> 
+    </ion-content>
+        <ion-floating-button 
+            icon="ion-ios-plus-empty" 
+            click="add(-1,null)">
+        </ion-floating-button>
+</ion-view>
