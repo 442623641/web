@@ -1,0 +1,71 @@
+.inner-toolbar .nav-pills a {
+    color: #3bbfb4;
+}
+.inner-toolbar {
+    background:rgba(255, 255, 255, 0.7);
+    padding: 0;
+    border-left: none;
+}
+.label-success {
+    background: #3bbfb4;
+}
+.inner-toolbar .nav-pills .active a, .inner-toolbar .nav-pills .active a:hover {
+    background-color: #3bbfb4;
+}
+.inner-toolbar > ul > li > a{
+	color: #3bbfb4;
+}
+.passport-third .hd {
+    height: 16px;
+    font-size: 12px;
+    text-align: center;
+}
+ .passport-third .hd .layout-inner {
+    margin-bottom: 7px;
+    border-bottom: 2px solid #f2f2f2;
+}
+ .passport-third .hd h3 {
+    width: 106px;
+    margin: 0 auto -8px;
+    background-color: #fff;
+    font-weight: 400;
+    line-height: 16px;
+}
+ .passport-third .links {
+    width: 286px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+ .passport-third .links a {
+    float: left;
+    display: block;
+    margin: 0 8px;
+}
+.passport-icon {
+    background-image: url(../img/fouricon.png);
+    background-size: 298px 120px;
+}
+.icon-eoe, .icon-tencent, .icon-weibo, .icon-weixin {
+    width: 55px;
+    height: 55px;
+    background-position: 0 -65px;
+}
+.passport-icon {
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.passport-third .icon-weibo {
+    background-position: -81px -65px;
+}
+.passport-third .icon-weixin {
+    background-position: -162px -65px;
+}
+.main {
+    padding: 85px 37px 98px 278px;
+}
+@media (max-width: 479px){
+    .main {
+        padding: 80px 10px 0 10px !important;
+    }
+}

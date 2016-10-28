@@ -1,0 +1,137 @@
+<!-- Page Header -->
+					<!-- <div class="page-header">
+						<div class="pull-left">
+							<ol class="breadcrumb visible-sm visible-md visible-lg">								
+								<li><a href="#/home"><i class="icon fa fa-home"></i>首页</a></li>
+								<li><a href="#"><i class="fa fa-list-alt"></i>我的店铺</a></li>
+							</ol>						
+						</div>
+						<div class="pull-right">
+							<h2>店铺</h2>
+						</div>					
+					</div> -->
+					<!-- End Page Header -->
+					<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="panel panel-default form-wizard" id="w1">
+								<div class="panel-heading">
+									<h6><i class="fa fa-tags bk-fg-warning"></i>店铺</h6>									
+									<!-- <div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div> -->
+								</div>
+								<div class="panel-body panel-body-nopadding">
+									<div class="wizard-tabs">
+										<ul class="wizard-steps">
+											<li class="active">
+												<a ng-click="tabIndex=0" data-toggle="tab" class="text-center">
+													<span class="badge hidden-xs">1</span>
+													基本信息
+												</a>
+											</li>
+											<li>
+												<a ng-click="tabIndex=1" data-toggle="tab" class="text-center">
+													<span class="badge hidden-xs">2</span>
+													海报信息
+												</a>
+											</li>
+											<li>
+												<a ng-click="tabIndex=2" data-toggle="tab" class="text-center bk-radius-right">
+													<span class="badge hidden-xs">3</span>
+													地图信息
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- <form class="form-horizontal" novalidate="novalidate"> -->
+										<div class="tab-content form-horizontal">
+											<div class="tab-pane" ng-class="{'active':!tabIndex}">
+												<div class="form-group">
+																<label class="col-md-3 control-label" for="email-input">店铺名称</label>
+																<div class="col-md-9">
+																	<input type="text" 
+																		ng-model="shop.name" 
+																	 	class="form-control" 
+																	 	placeholder="店铺名称">
+																	<span class="help-block">请输入店铺名称</span>
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="col-md-3 control-label" for="select">选择类型</label>
+																<div class="col-md-9">
+																	<select ng-model="shop.tag"
+																		name="select" 
+																		class="form-control" size="1">
+																		<option value="中餐">中餐</option>
+																		<option value="西餐">西餐</option>
+																		<option value="粤菜">粤菜</option>
+																		<option value="川菜">川菜</option>
+																		<option value="自助">自助</option>
+																		<option value="烧烤">烧烤</option>
+																		<option value="甜品">甜品</option>
+																	</select>
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="col-md-3 control-label" for="textarea-input">电话号码(可不填)</label>
+																<div class="col-md-9">
+																	<input type="text" 
+																		ng-model="shop.phone" 
+																	 	class="form-control" 
+																	 	placeholder="电话号码">
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="col-md-3 control-label" for="textarea-input">宣传标语(可不填)</label>
+																<div class="col-md-9">
+																	<textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" placeholder="50字以内" ng-model="shop.ad"></textarea>
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="col-md-3 control-label" for="textarea-input">店铺描述(可不填)</label>
+																<div class="col-md-9">
+																	<textarea id="textarea-input" name="textarea-input" 
+																	rows="3" class="form-control" placeholder="250字以内"
+																	ng-model="shop.memo"></textarea>
+																</div>
+															</div>
+											</div>
+											<div class="tab-pane" ng-class="{'active':tabIndex==1}">
+												<div class="alert alert-info">
+													<button type="button" class="close" data-dismiss="alert">×</button>
+													拖放图片上传与图像预览
+												</div>										  
+													<div class="form-group">
+													<label class="control-label">海报上传</label>
+													<div class="controls">
+													<div id="dropzone">
+													<form action="test.html" style= "min-height:200px;" 
+													class="dropzone dz-clickable">
+													<div class="dz-default dz-message"><span>拖拽图片到这里(最多5张)</span></div></form>
+													</div>
+													</div>
+													</div>
+											</div>
+											<div class="tab-pane" ng-class="{'active':tabIndex==2}">
+												<my-map></my-map>
+											</div>
+										</div>
+									<!-- </form> -->
+									<div class="panel-footer bk-bg-very-light-gray bk-radius">
+										<ul class="pager bk-margin-off">
+											<li class="previous" ng-click="previous()">
+												<a><i class="fa fa-angle-left"></i> 上一步</a>
+											</li>
+											<li class="finish pull-right" ng-if="tabIndex==2" ng-click="save()">
+												<a>保存</a>
+											</li>
+											<li class="next" ng-if="tabIndex!=2" ng-click="next()">
+												<a>下一步 <i class="fa fa-angle-right"></i></a>
+											</li>
+										</ul>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
