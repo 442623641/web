@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../agriculturespider/.idea/agriculturespider.iml" filepath="$PROJECT_DIR$/../agriculturespider/.idea/agriculturespider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../csc/.idea/csc.iml" filepath="$PROJECT_DIR$/../csc/.idea/csc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../douban/.idea/douban.iml" filepath="$PROJECT_DIR$/../douban/.idea/douban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hnspider/.idea/hnspider.iml" filepath="$PROJECT_DIR$/../hnspider/.idea/hnspider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vespiderredis/.idea/novelspider.iml" filepath="$PROJECT_DIR$/../vespiderredis/.idea/novelspider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/novelspiderredis.iml" filepath="$PROJECT_DIR$/.idea/novelspiderredis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../novelspider1/.idea/program.iml" filepath="$PROJECT_DIR$/../novelspider1/.idea/program.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rexx/.idea/rexx.iml" filepath="$PROJECT_DIR$/../rexx/.idea/rexx.iml" />
+    </modules>
+  </component>
+</project>
