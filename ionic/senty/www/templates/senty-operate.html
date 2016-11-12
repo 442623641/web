@@ -1,0 +1,189 @@
+ <ion-modal-view ng-controller="SoperateCtrl">
+    <ion-header-bar  class="bar-senty">
+      <button class="button button-clear button-light button-icon icon ion-ios-close-empty" 
+      ng-click="hideModal('sDeliveryModal')">
+      </button>
+      <div class="title title-center header-item">素材处置</div>
+    </ion-header-bar>
+    <ion-content>
+    <div class="list">
+      <div class="item item-input">
+        <span class="input-label color-senty">
+         网址
+        </span>
+        <input type="text" 
+        placeholder="网址"
+        ng-model="material.URL"
+        required ng-maxlength="100">
+      </div>
+      <div class="item item-input">
+       <span class="input-label color-senty">
+        网站名称
+        </span>
+        <input type="text" 
+        placeholder="所属网站"
+        ng-model="material.LY"
+        required ng-maxlength="100">
+      </div>
+      <div class="item item-input item-icon-left">
+      <span class="input-label color-senty">
+         标题
+        </span>
+        <input type="text" placeholder="标题(必填)" 
+        ng-model="material.SCBT" required ng-maxlength="100">
+      </div>
+
+      <div class="item item-divider">
+      </div>
+      <div class="item item-input">
+        <span class="input-label color-senty">
+         所在地区
+        </span>
+        <input type="text" 
+        placeholder="所在地区"
+        ng-model="material.SZDQ"
+        required ng-maxlength="100">
+      </div>
+      <div class="item item-input">
+        <span class="input-label color-senty">
+         IP
+        </span>
+        <input ng-model="material.IPDZ"
+          placeholder="IP"
+          type="text">
+      </div>
+      <div class="item item-input">
+        <span class="input-label color-senty">
+             发帖时间
+        </span>
+        <input ng-model="material.JCSJ"
+              placeholder="发帖时间"
+              type="text">
+        </div>
+        <div class="item item-input">
+          <span class="input-label color-senty">
+          相关人员
+        </span>
+        <input ng-model="material.XGZZ"
+            placeholder="相关人员"
+            type="text">
+        </div>
+         <div class="item item-input">
+        <span class="input-label color-senty">
+         所在栏目
+        </span>
+        <input ng-model="material.SZLM"
+          placeholder="所在栏目"
+          type="text">
+      </div>
+        <div class="item item-input">
+        <span class="input-label color-senty">
+         发帖人位置
+        </span>
+        <input type="text" 
+        placeholder="发帖人所在地"
+        ng-model="material.SZD"
+        required ng-maxlength="100">
+      </div>
+      <div class="item item-divider"></div>
+       <div class="item item-input">
+        <span class="input-label color-senty">
+         信息备案信息
+        </span>
+        <input ng-model="material.XXBBA"
+          placeholder="信息备案信息"
+          type="text">
+      </div>
+      <div class="item item-input">
+        <span class="input-label color-senty">
+         公安备案信息
+        </span>
+        <input ng-model="material.GABBA"
+          placeholder="公安备案信息"
+          type="text">
+      </div>
+      <div class="item item-divider">
+      </div>
+
+      <a class="item item-icon-right" 
+      ng-click="sentyTypeModal.show()">
+        <span class="color-senty">
+          信息分类
+        </span>
+        <span class="item-note word-break ng-binding">{{sentyTypeText}}</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <a class="item item-icon-right" 
+            ng-click="pageTypeModal.show()">
+              <span class="color-senty">
+                页面类型
+              </span>
+              <span class="item-note word-break ng-binding">{{pageType}}</span>
+              <i class="icon ion-ios-arrow-right"></i>
+            </a>
+      <div class="item item-divider">
+      </div>
+      <a class="item item-icon-right" 
+      ng-click="keyTypeModal.show()">
+        <span class="color-senty">
+          关键词类
+        </span>
+        <span class="item-note word-break ng-binding">{{keyType}}</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <div class="item item-input">
+        <span class="input-label color-senty">
+         关键词
+        </span>
+        <input type="text" 
+        placeholder="输入关键词"
+        ng-model="material.CGJC"
+        required ng-maxlength="100">
+      </div>
+
+      <div class="item item-divider">
+        法律依据
+      </div>
+      <div class="item item-buttons">
+        <a 
+        class="button icon-right button-outline"
+        ng-class="{'ion-ios-checkmark-empty button-senty':material.FLYJ==1,'button-clear button-light':material.FLYJ!=1}"
+        ng-click="material.FLYJ=1">含有非法内容</a>
+        <a class="button icon-right button-outline"
+        ng-class="{'ion-ios-checkmark-empty button-senty':material.FLYJ==2,'button-clear button-light':material.FLYJ!=2}"
+        ng-click="material.FLYJ=2">违反宪法</a>
+      </div>
+      <div class="item item-divider">
+        活动形式
+      </div>
+      <div class="item item-buttons">
+            <a 
+            class="button icon-right button-outline"
+            ng-class="{'ion-ios-checkmark-empty button-senty':material.HDXS==1,'button-clear button-light':material.HDXS!=1}"
+            ng-click="material.HDXS=1">转载</a>
+            <a class="button icon-right button-outline"
+            ng-class="{'ion-ios-checkmark-empty button-senty':material.HDXS==2,'button-clear button-light':material.HDXS!=2}"
+            ng-click="material.HDXS=2">其它</a>
+          </div>
+      <div class="item item-divider">
+        信息说明
+      </div>
+      <div class="item item-input">
+        <textarea rows=4 
+          placeholder="500字以内" 
+          ng-trim="true"
+          ng-model="material.XXSM"
+          required
+          ng-maxlength="125">
+        </textarea>
+      </div>
+      <div class="item item-divider"></div>
+    </div>
+    <div class="padding">
+      <button class="button bar text-center button-outline button-senty" 
+      ng-click="save()">
+         提 交
+      </button>
+   </div>
+    </ion-content>
+</ion-modal-view>

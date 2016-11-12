@@ -1,0 +1,10 @@
+{
+  "name": "menu",
+  "app_id": "123leo",
+  "proxies": [
+    {
+      "path": "/magical",
+      "proxyUrl":"http://139.196.8.187/magical"
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+
+				<!-- Main Page -->
+				<!-- <div class="main "> -->
+					<!-- Page Header -->
+					<!-- <div class="page-header">
+						<div class="pull-left">
+							<ol class="breadcrumb visible-sm visible-md visible-lg">								
+								<li><a href="index.html"><i class="icon fa fa-home"></i>首页</a></li>
+								<li class="active"><i class="fa fa-laptop"></i>控制面板</li>
+							</ol>						
+						</div>
+						<div class="pull-right">
+							<h2>控制面板</h2>
+						</div>					
+					</div> -->
+					<!-- End Page Header -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+							<div class="owl-carousel" data-plugin-carousel data-plugin-options='{ "autoPlay": 3000, "items": 6, "itemsDesktop": [1199,4], "itemsDesktopSmall": [979,3], "itemsTablet": [768,2], "itemsMobile": [479,1] }'>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo1.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo2.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo3.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo4.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo5.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo6.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo7.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo8.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo9.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo10.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo11.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo12.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo13.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo14.jpg" alt=""></div>
+								<div class="item spaced"><img class="img-thumbnail" src="assets/img/gallery/photo15.jpg" alt=""></div>
+							</div>
+						</div>
+					</div>
+						<hr />	
+					<div class="row state-overview">
+					                 <!--  <div class="col-lg-3 col-sm-6">
+					                      <section class="panel">
+					                          <div class="symbol terques">
+					                              <i class="fa fa-user"></i>
+					                          </div>
+					                          <div class="value">
+					                              <h1 class="count">495</h1>
+					                              <p>食客</p>
+					                          </div>
+					                      </section>
+					                  </div> -->
+					                  <count-card icon="fa-user" 
+					                  count="{{count1}}" 
+					                  background="terques"
+					                  title="食客">
+					                  </count-card>
+					                   <count-card icon="fa-tags" 
+					                  count="{{count2}}" 
+					                  background="red"
+					                  title="营业额">
+					                  </count-card>
+					                   <count-card icon="fa-shopping-cart" 
+					                  count="{{count3}}" 
+					                  background="yellow"
+					                  title="桌数">
+					                  </count-card>
+					                   <count-card icon="fa-bar-chart-o" 
+					                  count="{{count4}}" 
+					                  background="blue"
+					                  title="总营业额">
+					                  </count-card>
+					              </div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel">
+								<div class="panel-body">
+									<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">							
+										<div class="tabs tabs-bottom tabs-primary bk-margin-bottom-15 bk-margin-top-15">
+											<div class="tab-content bk-bg-very-light-gray">
+												<div id="adminCart" class="tab-pane active">
+													<div class="row">
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div id="adminChartUpdate" style="height:198px"></div>															
+														</div>
+													</div>
+												</div>
+												<div id="widget" class="tab-pane">
+													<div class="row">
+														<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+															<div class="panel bk-widget bk-border-off">
+																<div class="bk-bg-white  bk-border-very-light-gray bk-fg-danger bk-ltr bk-padding-15 bk-radius">
+																	<div class="row">
+																		<div class="col-xs-4 text-left bk-vcenter bk-padding-off">
+																			<span class="bk-round bk-icon bk-icon-2x bk-bg-danger bk-border-off">
+																				<i class="fa fa-users fa-2x"></i>
+																			</span>
+																		</div>
+																		<div class="col-xs-8 text-left bk-vcenter">
+																			<h6 class="bk-margin-off">TOTAL USERS</h6>
+																			<strong class="bk-margin-off">326,269</strong>
+																		</div>
+																	</div>
+																	<div class="progress light progress-striped active bk-margin-off-bottom bk-margin-top-10 bk-noradius" style="height: 6px;">
+																		<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+																			<span class="sr-only">90% Complete</span>
+																		</div>
+																	</div>
+																	<div class="bk-margin-top-10">
+																		<div class="row">
+																			<div class="col-xs-6">
+																				<small>Monthly: 6,269</small>
+																			</div>
+																			<div class="col-xs-6 text-right">
+																				<a href="#" class="bk-fg-danger bk-fg-darken"><small>View details</small> <i class="fa fa-database"></i></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+															<div class="panel bk-widget bk-border-off">
+																<div class="bk-bg-white bk-border-very-light-gray bk-fg-success bk-ltr bk-padding-15 bk-radius">
+																	<div class="row">
+																		<div class="col-xs-4 text-left bk-vcenter bk-padding-off">
+																			<span class="bk-round bk-border-off bk-icon bk-icon-2x bk-bg-success">
+																				<i class="fa fa-download fa-2x"></i>
+																			</span>
+																		</div>
+																		<div class="col-xs-8 text-left bk-vcenter">
+																			<h6 class="bk-margin-off">DOWNLOAD</h6>
+																			<strong class="bk-margin-off">1,256</strong>
+																		</div>
+																	</div>
+																	<div class="progress light progress-striped active bk-margin-off-bottom bk-margin-top-10 bk-noradius" style="height: 6px;">
+																		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+																			<span class="sr-only">80% Complete</span>
+																		</div>
+																	</div>
+																	<div class="bk-margin-top-10">
+																		<div class="row">
+																			<div class="col-xs-6">
+																				<small>Stock: 32,269</small>
+																			</div>
+																			<div class="col-xs-6 text-right">
+																				<a href="#" class="bk-fg-success bk-fg-darken"><small>View details</small> <i class="fa fa-database"></i></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+															<div class="panel bk-widget bk-border-off">
+																<div class="bk-bg-white  bk-border-very-light-gray bk-fg-warning bk-ltr bk-padding-15 bk-radius">
+																	<div class="row">
+																		<div class="col-xs-4 text-left bk-vcenter bk-padding-off">
+																			<span class="bk-round bk-border-off bk-icon bk-icon-2x bk-bg-warning">
+																				<i class="fa fa-shopping-cart fa-2x"></i>
+																			</span>
+																		</div>
+																		<div class="col-xs-8 text-left bk-vcenter">
+																			<h6 class="bk-margin-off">PURCHASE</h6>
+																			<strong class="bk-margin-off">$526,369</strong>
+																		</div>
+																	</div>
+																	<div class="progress light progress-striped active bk-margin-off-bottom bk-margin-top-10 bk-noradius" style="height: 6px;">
+																		<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+																			<span class="sr-only">80% Complete</span>
+																		</div>
+																	</div>
+																	<div class="bk-margin-top-10">
+																		<div class="row">
+																			<div class="col-xs-6">
+																				<small>Top day: 11/25/2014</small>
+																			</div>
+																			<div class="col-xs-6 text-right">
+																				<a href="#" class="bk-fg-warning bk-fg-darken"><small>View details</small> <i class="fa fa-database"></i></a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>	
+													</div>
+													<div class="text-center">
+														<p> Fire Admin Transaction Activity</p> 
+													</div>
+												</div>
+											</div>
+											<ul class="nav nav-tabs nav-right">
+												<li class="active">
+													<a href="#adminCart" data-toggle="tab"> Fire Admin</a>
+												</li>
+												<li>
+													<a href="#widget" data-toggle="tab"> Widget Update</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									
+									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">										
+										<div class="text-center bk-margin-bottom-15 bk-margin-top-15">
+											<canvas id="polarArea" height="215" width="215"></canvas>
+										</div>
+										<h4 class="text-center">Monthly Sales</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>		
+
+					<div class="row">
+						<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h6><i class="fa fa-signal"></i>Server Usage</h6>									
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+									<p>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</p>
+								</div>
+								<div class="panel-body">
+									<div id="realtimeServerUsage" style="height:200px;"></div>
+									<div class="bk-margin-top-10 bk-padding-right-10 pull-right">									
+										<p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em" /> milliseconds</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel">
+								<div class="panel-heading panel-heading-transparent bk-border-off">
+									<h6><strong>Market Inventory</strong></h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+										<h4 class="bk-fg-warning">Best Seller</h4>
+										<div id="piechart" style="height:280px"></div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+										<h4 class="bk-fg-warning">Marketplace Area</h4>
+										<canvas id="radar" height="280" width="220"></canvas>	
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+							<div class="panel">								
+								<div class="panel-heading panel-heading-transparent">									
+									<h6><strong>Chat room</strong></h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="bk-docs-scroll-hidden">
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> just now</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>									
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 3' ago</small></span>
+												</div>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> 6' ago</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 11' ago</small></span>
+												</div>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> 6' ago</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 11' ago</small></span>
+												</div>
+												<p>
+												   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> 6' ago</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 11' ago</small></span>
+												</div>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> 6' ago</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 11' ago</small></span>
+												</div>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-left bk-margin-top-10 bk-margin-right-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="bk-fg-primary"><div class="point point-success point-lg"></div>John Doe</strong>
+													<span class="pull-right"><i class="fa fa-clock-o"></i><small> 6' ago</small></span>
+												</div>
+												<p>
+													Cum sociis natoque pen ibus Mauris pede arcuats moles tied Aliquam or Mauris pede arcuats
+												</p>
+											</a>
+											<hr class="bk-margin-off" />
+										</div>
+										<div class="bk-padding-left-20 bk-padding-right-20">
+											<a class="bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
+												<div class="pull-right bk-margin-top-10 bk-margin-left-10">
+													<div class="bk-avatar">
+														<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
+													</div>
+												</div>
+												<div class="bk-fg-inverse bk-margin-top-10">
+													<strong class="pull-right bk-fg-primary"><div class="point point-success point-lg"></div>Robert</strong>
+													<span><i class="fa fa-clock-o"></i><small> 11' ago</small></span>
+												</div>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor.
+												</p>
+											</a>										
+											<hr class="bk-margin-off" />
+										</div>
+									</div>
+									<div class="bk-bg-white bk-padding-top-15 bk-padding-bottom-15">
+										<form role="form" action="javascript:">
+											<div class="input-group">
+												<input type="text" class="form-control bk-noradius" />
+												  <span class="input-group-btn">
+													<button class="btn btn-default bk-noradius" type="button"><i class="fa fa-send-o"></i></button>
+												  </span>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading bk-bg-white">									
+									<h6><span class="label label-danger bk-margin-5">165</span>Friends</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">									
+									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
+										<div class="row">
+											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
+												<div class="bk-avatar">
+													<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-40 bk-border-primary bk-border-2x bk-border-darken">
+												</div>
+											</div>
+											<div class="col-xs-9 bk-vcenter">
+												<h5 class="bk-fg-primary bk-fg-darken bk-margin-off-bottom">John Doe</h5>
+												<p>
+													Nullam vitae arcu in leo molestie hendrerit at quis sem.
+												</p>
+											</div>
+										</div>
+									</a>
+									<hr class="bk-margin-off">
+									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
+										<div class="row">
+											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
+												<div class="bk-avatar">
+													<img src="assets/img/avatar2.jpg" alt="" class="img-circle bk-img-40 bk-border-warning bk-border-2x bk-border-darken">
+												</div>
+											</div>
+											<div class="col-xs-9 bk-vcenter">
+												<h5 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom">John Doe</h5>
+												<p>
+													Nunc vitae porttitor purus.
+												</p>
+											</div>
+										</div>
+									</a>
+									<hr class="bk-margin-off">
+									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
+										<div class="row">
+											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
+												<div class="bk-avatar">
+													<img src="assets/img/avatar2.jpg" alt="" class="img-circle bk-img-40 bk-border-danger bk-border-2x bk-border-darken">
+												</div>
+											</div>
+											<div class="col-xs-9 bk-vcenter">
+												<h5 class="bk-fg-danger bk-fg-darken bk-margin-off-bottom">John Doe</h5>
+												<p>
+													Morbi interdum posuere ultricies. Aliquam sit amet neque nisi.
+												</p>
+											</div>
+										</div>
+									</a>
+									<hr class="bk-margin-off">
+									<div class="panel-footer bk-bg-white">
+										<div class="bk-padding-top-5 bk-padding-bottom-5 ">
+											<div class="row">
+												<div class="col-xs-6">
+													<a href="#" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
+												</div>
+												<div class="col-xs-6 text-right">
+													<a href="#" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+				<!-- End Main Page -->

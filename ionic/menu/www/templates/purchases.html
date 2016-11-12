@@ -1,0 +1,54 @@
+<ion-modal-view ng-controller="PurchaseCtrl">
+ <ion-header-bar class="bar-diamond">
+   <button class="button button-clear button-light ion-ios-close-empty button-outline button-circle icon" 
+      ng-click="closePurchaseModal()">
+    </button>
+    <div class="title title-center header-item">
+      我的菜单
+    </div> 
+    <!-- <ion-toggle ng-model="shouldShowDelete">
+    选择
+    </ion-toggle>
+ -->      
+   <button class="button button-clear button-light ion-ios-checkmark-empty button-outline button-circle icon" 
+        ng-click="shouldShowDelete=!shouldShowDelete">
+      </button> 
+  </ion-header-bar>
+  <ion-content class="has-tabs">
+	<!-- <div class="list">
+	    <a class="item item-avatar"
+      ng-repeat="item in purchases track by $index">
+	      <img ng-src="{{item.link}}">
+	      <h2>{{item.name}}</h2>
+	      <p>{{item.originalPrice}} 元</p>
+	    </a>
+	</div> -->
+  <ion-list can-swipe="true" show-delete="shouldShowDelete">
+  <ion-item ng-repeat="item in purchases track by $index"
+            class="item-avatar-left">  
+
+    <img ng-src="{{item.link}}">
+    <h2>{{item.name}}</h2>
+    <p>{{item.originalPrice}}<span class="item-note">{{item.ignore?0:1}}份</span></p>
+
+    <ion-option-button class="button-assertive"
+                       ng-click="del(item,$index)">
+      删除
+    </ion-option-button>
+   <ion-delete-button 
+     style="max-height: 100%"
+     ng-class="{'ion-ios-checkmark-outline button-senty':!item.ignore,'ion-ios-circle-outline button-light':item.ignore}"
+     class="button-clear"
+      ng-click="check(item)">
+    </ion-delete-button>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+  <div class="tabs no-border">
+    <div class="button-bar">
+      <a class="button button-assertive button-clear">总计 {{purchaseTotal}} 元</a>
+      <a class="button button-assertive">支付</a>
+    </div>
+  </div>
+</ion-modal-view>

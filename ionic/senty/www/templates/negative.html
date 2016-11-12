@@ -1,0 +1,47 @@
+<ion-modal-view ng-controller="NegativeCtrl"> 
+    <ion-header-bar  class="bar-senty">
+<!--       <button class="button button-clear button-icon icon ion-ios-arrow-left button-light" 
+      ng-click="negativeModal.hide()">
+      </button> -->
+      <button class="button back-button buttons button-light button-clear header-item" 
+      ng-click="negativeModal.hide()">
+      <i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title">返回</span></span></button>
+      <div class="title title-center header-item">{{negative.title}}</div>
+      <button class="button button-light button-clear"></button>
+    </ion-header-bar>
+  <ion-content class="padding has-footer" style="background-color: #fff;">
+  <div class="page-view-article">
+               <div class="page-view-artical-header">
+                   <h2 class="page-view-article-title" 
+                   style="font-size: 22px; line-height: 27px;">
+                   {{negative.title}}</h2>
+                   <div class="page-view-article-info"><i class="icon ion-ios-navigate-outline"></i><span >{{negative.location}}</span></div>
+                   <div class="page-view-article-info">{{negative.source_name}}<span class="page-view-article-info-time">{{negative.timestamp}}</span>
+                   <div class="detail-auth">
+                   <i class="icon ion-ios-person-outline"></i>   
+                    <span >{{negative.nickname}}</span>
+                   </div>
+                   </div>
+
+               </div>
+               <div class="page-view-article-content">
+                  <p class="page-view-article-text">{{negative.content}}</p>   
+               </div>
+           </div>
+           <div class="page-view-state">
+             <a href="javascript:;" ng-click="openLink(negative.url,'_blank')" >点击查看原文<i class="page-view-right"></i>
+             </a>
+           </div>
+   </div>
+<!--    <div class="row col-row">
+      <div class="col " ng-if="negative.read_count">
+      <i class="icon ion-ios-eye-outline"></i><span>{{negative.read_count}}</span></div>
+      <div class="col ion-ios-chatbubble-outline" 
+      ng-if="negative.comment_count">
+      <i class="icon ion-ios-chatbubble-outline"></i><span>{{negative.comment_count}}</span></div>
+      <div class="col " ng-if="negative.keyword">
+      <i class="icon ion-ios-search"></i><span>{{negative.keyword}}</span></div>
+    </div> -->
+  </ion-content>
+</ion-modal-view>
