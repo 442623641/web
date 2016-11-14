@@ -3,7 +3,7 @@ angular.module('controllers')
   // if(!AuthService.isAuthenticated()){
   //   return;
   // }
-  $scope.$on(AUTH_EVENTS.loginSuccess, function() {
+  $scope.$on(AUTH_EVENTS.loginSuccess, function(event) {
     event.preventDefault();
     $scope.loginModal.hide().then(function(){
       $scope.data[$scope.pageIndex].doRefresh();
@@ -32,7 +32,8 @@ angular.module('controllers')
         var cpage=this;
         var parasDate=dateService.getDateFormat(cpage.interval);
         Solr.results({code:cpage.code,date:parasDate},animation)
-        .success(function(res){
+        //.success(function(res){
+        .then(function(res){
             //res.mess="isfbvw";
             if (res&&res.mess) {
               cpage.message=res.mess;
@@ -54,11 +55,11 @@ angular.module('controllers')
             cpage.yesterday=dateService.getNowDate(cpage.interval).dayString;
 
         })
-        .error(function (data, status) {
-            cpage.message="网络连接失败";
-            console.log("Error occurred.  Status:" + status);
-        })
-        .finally(function() {
+        // .error(function (data, status) {
+        //     cpage.message="网络连接失败";
+        //     console.log("Error occurred.  Status:" + status);
+        // })
+        .then(function() {
            // 停止广播ion-refresher
           $scope.$broadcast('scroll.refreshComplete');
           $scope.loadingHide();

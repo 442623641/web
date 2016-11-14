@@ -452,6 +452,183 @@ angular.module('directives', [])
         }
     }
 })
+.directive('luna',function () {
+    return {
+        restrict: 'E',
+        replace: true,
+         scope:{
+            domElement:'@?',
+        },
+        template: '<div style="position: absolute;"></div>',//
+        link:function($scope,element, attrs){   
+            var container, stats;
+            var camera, controls, scene, renderer;
+            var mesh, texture, geometry, material;
+            var worldWidth = 128, worldDepth = 128, 
+            worldHalfWidth = worldWidth / 2,worldHalfDepth = worldDepth / 2;
+            var sky;
+            var clock = new THREE.Clock();            
+            function init() {
+
+              //container = element[0].getElementById('container');
+
+              camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 2500);
+
+              var cameraX = 0;
+              var cameraY = 70;
+              var cameraZ = 0;
+
+              camera.position.x = cameraX;
+              camera.position.y = cameraY;
+              camera.position.z = cameraZ;
+
+              scene = new THREE.Scene();
+              scene.fog = new THREE.FogExp2(0x004076, 0.0006);
+
+              // moon
+              var sphereGeometry = new THREE.SphereGeometry(100, 16, 16);
+              var sphereMaterial = new THREE.MeshPhongMaterial({
+                color: 0xffffff,
+                shininess: 10,
+                emissive: 0xFFFFFF,
+                emissiveIntensity: 3
+              });
+              var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+              sphere.position.set(0, 450, -2450); //-2500);
+
+              scene.add(sphere);
+
+              // lights
+              var pointMoonColor = "#FCFFB4";
+              pointMoon = new THREE.PointLight(pointMoonColor, 1500, 300);
+              pointMoon.position.set(0, 450, -2500);
+              scene.add(pointMoon);
+              // scene.add(new THREE.PointLightHelper(pointMoon, 1));
+
+              // ambient
+              var ambiColor = "#0c0c0c";
+              var ambientLight = new THREE.AmbientLight(ambiColor);
+              scene.add(ambientLight);
+
+              // lights
+              var pointAColor = "#FFA600";
+              pointA = new THREE.PointLight(pointAColor, 50, 1);
+              pointA.position.set(0, 70, 0);
+              scene.add(pointA);
+              scene.add(new THREE.PointLightHelper(pointA, 1));
+
+              // right light
+              var dirLightL = new THREE.DirectionalLight(0xffffff, 1);
+              dirLightL.position.set(20, 0, 0);
+              scene.add(dirLightL);
+
+              // from behing
+              var dirLightBehind = new THREE.DirectionalLight(0x004076, 10);
+              dirLightBehind.position.set(0, 0, -500);
+              scene.add(dirLightL);
+
+              var cubeGeometry = new THREE.BoxGeometry(50, 50, 50);
+              var cubeMaterial = new THREE.MeshLambertMaterial({
+                color: 0xff0000
+              });
+              var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+              cube.position.y = 250;
+              scene.add(cube);
+
+              geometry = new THREE.PlaneGeometry(10000, 10000, worldWidth * 2 - 1, worldDepth * 2 - 1);
+
+              geometry.rotateX(Math.PI / 2);
+              //geometry.rotation.x = Math.PI/2;
+
+              for (var i = 0, l = geometry.vertices.length; i < l; i++) {
+
+                geometry.vertices[i].y = 5 * Math.sin(i / 4);
+
+              }
+
+              material = new THREE.MeshPhongMaterial({
+                color: 0x004076,
+                shading: THREE.FlatShading,
+                side: THREE.DoubleSide,
+                shininess: 25,
+                wireframe: false
+              });
+
+              mesh = new THREE.Mesh(geometry, material);
+              scene.add(mesh);
+
+              // SKY
+
+              // moons light
+
+              var spotColor = "#BF93FF";
+              var spotLight = new THREE.SpotLight(spotColor);
+              spotLight.angle = Math.PI;
+              spotLight.position.set(0, 160, -2000);
+              spotLight.distance = 5000;
+              spotLight.intensity = 5;
+              spotLight.castShadow = true;
+
+              spotLight.shadowCameraVisible = true;
+
+              spotLight.target = cube;
+              scene.add(spotLight);
+
+              renderer = new THREE.WebGLRenderer();
+              renderer.setClearColor(0x004076);
+              //renderer.setPixelRatio( window.devicePixelRatio );
+              renderer.setSize(window.innerWidth, window.innerHeight);
+
+              //container.innerHTML = "";
+
+              //container.appendChild(renderer.domElement);t;
+            element.append(renderer.domElement);
+              stats = new Stats();
+              //container.appendChild( stats.dom );
+              //
+
+              //window.addEventListener('resize', onWindowResize, false);
+
+            }
+
+            //
+
+           function animate() {
+
+              requestAnimationFrame(animate);
+
+              render();
+              stats.update();
+
+            }
+
+            function render() {
+
+              var delta = clock.getDelta(),
+                time = clock.getElapsedTime() * 10;
+
+              for (var i = 0, l = geometry.vertices.length; i < l; i++) {
+                geometry.vertices[ i ].y = 3 * Math.sin( i / 2 + ( time + i / 3 ) / 5 );
+                
+                //geometry.vertices[i].y = 3 * Math.sin(i / 2 + (time + i * 0.5 / 5) / 8);
+
+
+              }
+
+              // spin sea
+              mesh.rotation.y += 0.0005;
+
+              mesh.geometry.verticesNeedUpdate = true;
+
+              // controls.update( delta );
+              renderer.render(scene, camera);
+
+            }
+            init();
+            animate();
+        }
+    }
+})
 .directive('backgroundView',function () {
     return {
         restrict: 'EA',

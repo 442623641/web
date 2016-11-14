@@ -58,18 +58,19 @@ angular.module('controllers', [])
   $scope.openNegativeModal = function(id) {
     //$scope.showToast("努力加载中...",3000);
     event.preventDefault();
-    Solr.getData({},{id:id}).success(function(res){
+    Solr.getData({},{id:id})
+    .then(function(res){
       if(res.mess){
         $scope.showToast(res.mess);
         return;
       }
       $scope.negative=res.results[0];
     })
-    .error(function (data,status) {
-      $scope.showToast("网络异常");
-      $scope.loadingHide();
-    })
-    .finally(function() {
+    // .error(function (data,status) {
+    //   $scope.showToast("网络异常");
+    //   $scope.loadingHide();
+    // })
+    .then(function() {
       $scope.loadingHide();
       $scope.negativeModal.show(); 
     });
@@ -129,7 +130,9 @@ angular.module('controllers', [])
       this.doRefresh=function(animation) {
           this.start=0;
           var cpage=this;
-          Solr.getData({q:cpage.key,start:cpage.start,rows:cpage.rows,length:100},false,animation).success(function(res){
+          Solr.getData({q:cpage.key,start:cpage.start,rows:cpage.rows,length:100},false,animation)
+          //.success(function(res){
+          .then(function(res){
             if(res.mess||res.results.length==undefined){
               cpage.message=res.mess;
               return;
@@ -140,10 +143,10 @@ angular.module('controllers', [])
             cpage.isInit=true;
             $ionicScrollDelegate.resize();
           })
-          .error(function (data,status) {
-            cpage.message="网络异常";
-          })
-          .finally(function() {
+          // .error(function (data,status) {
+          //   cpage.message="网络异常";
+          // })
+          .then(function() {
             // 停止广播ion-refresher
             $scope.$broadcast('scroll.refreshComplete');
             $scope.loadingHide();
@@ -152,7 +155,8 @@ angular.module('controllers', [])
       this.loadMore=function() {
         var cpage=this;
         Solr.getData({q:cpage.key,start:cpage.start,rows:cpage.rows,length:70},false,false)
-        .success(function(res){
+        //.success(function(res){
+          .then(function(res){
             if(res.mess||res.results.length==undefined){
               cpage.message=res.mess;
               return;
@@ -163,10 +167,10 @@ angular.module('controllers', [])
             $ionicScrollDelegate.resize();
 
         })
-        .error(function (data, status) {
-            cpage.message="网络异常";
-        })
-        .finally(function() {
+        // .error(function (data, status) {
+        //     cpage.message="网络异常";
+        // })
+        .then(function() {
            // 停止广播ion-refresher
            $scope.$broadcast('scroll.infiniteScrollComplete');
            $scope.loadingHide();
@@ -226,7 +230,7 @@ angular.module('controllers', [])
   });
 })
 .controller('LoginCtrl', function($scope, $state,$ionicModal, $stateParams,Session,localStorageService,USER_ROLES,AuthService,AUTH_EVENTS) {
-
+   
     $scope.message = "";
 
     var reuser=localStorageService.get("rememberUser");

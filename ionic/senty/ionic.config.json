@@ -5,6 +5,11 @@
     {
       "path": "/Do.ashx",
       "proxyUrl":"http://36.7.150.152:22016/Do.ashx"
+    },
+     {
+      "path": "/magical",
+      "proxyUrl":"http://139.196.8.187/magical/index.php/Menu/empty"
     }
   ]
+  
 }

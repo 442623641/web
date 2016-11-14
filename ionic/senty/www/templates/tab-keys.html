@@ -33,7 +33,7 @@
                      </div> -->
                     </div>
                     <ul class="resources">
-                      <li ng-repeat="item in group.Items" class="resource--talks">
+                      <li ng-repeat="item in group.Items track by $index" class="resource--talks">
                       <a 
                       href="#/tab/result/{{item.Title}}/{{item.Text}}" 
                       class="resource__link">

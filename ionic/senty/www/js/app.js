@@ -18,8 +18,11 @@ var app=angular.module('app', ['ionic', 'ionic-toast','controllers',
   // 'logout':'http://36.7.150.152:22016/Do.ashx?userName={0}&password={1}&cls=User&fun=Login',
   // 'login':'http://36.7.150.152:22016/Do.ashx?userName={0}&password={1}&cls=User&fun=Login',
   // 'keys':'http://36.7.150.152:22016/Do.ashx?cls=Senty&fun=List&userID={0}',
-  'senty_release':'http://36.7.150.152:22016/Do.ashx',
-  'senty_development':'http://localhost:8100/Do.ashx',
+  //'senty_release':'http://36.7.150.152:22016/Do.ashx',
+  //'senty_development':'http://localhost:8100/Do.ashx',
+  'senty_release':'http://139.196.8.187/magical/index.php/Menu/empty',
+  'senty_development':'http://localhost:8100/magical/index.php/Menu/empty',
+  
 })
 
 .constant('USER_ROLES', {

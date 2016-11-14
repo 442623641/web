@@ -12,7 +12,7 @@
       </ion-refresher>
       <section>
       <div class="card facebook-card" 
-            ng-repeat="nt in negatives">
+            ng-repeat="nt in negatives track by $index">
               <div class="card-header no-avatar">
                 <div class="facebook-name">{{nt.nickname?nt.nickname:'匿名'}}</div>
                 <div class="facebook-date">{{nt.timestamp}}</div>

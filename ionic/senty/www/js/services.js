@@ -46,12 +46,15 @@ angular.module('services', [])
         getAll: function(userID,loading) {
             (loading==undefined||loading)&&$ionicLoading.show();
             var p={fun:"List",cls:"Senty",userID:userID}
-            return $http.get(url.senty,{params:p});
+            return $http.get(url.senty,{params:p}).then(function(){
+                return json.keys;
+            });
         },
         getLast: function(userID) {
             var p={fun:"LastKeys",cls:"Senty",userID:userID}
             return $http.get(url.senty,{params:p}).then(
                 function(res){
+                    res.data={yqKey:{key:'合肥 AND 地铁'},yhKey:{key:'抢劫 OR 色狼 OR 猥亵'}}
                     if(res&&res.data){
                         localStorageService.update('lastKeys',res.data);
                         Session.setKeys(res.data);
@@ -82,7 +85,9 @@ angular.module('services', [])
     return {
         getAll: function(code,date) {
             $ionicLoading.show();
-            return $http.get(url.negative.format(code,date));
+            return $http.get(url.negative.format(code,date)).then(function(){
+                return {}
+            });
         },
         get: function(id) {
             $ionicLoading.show();
@@ -162,18 +167,30 @@ angular.module('services', [])
     authService.login=function(param){
         param.cls="User";
         param.fun="Login";
-        $http.get(url.senty,{params:param}).success(function (data) {
-            if(!!data.mess){
-                $rootScope.$broadcast(AUTH_EVENTS.loginFailed,data.mess);
-                return;
-            }
-            Session.create(data);
-            localStorageService.update("rememberUser",{username:Session.username,password:Session.password});
-            localStorageService.update('user',data); 
-            $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-        }).error(function(){
-            $rootScope.$broadcast(AUTH_EVENTS.loginFailed,'网络连接错误');
-        });
+        var user={username:"Leo0908",password:"123456"}
+        setTimeout(()=>{
+             if(param.username!=user.username||param.password!=user.password){
+                 $rootScope.$broadcast(AUTH_EVENTS.loginFailed,'用户名或密码错误');
+                 return;
+             }
+             Session.create(json.user);
+             localStorageService.update("rememberUser",{username:Session.username,password:Session.password});
+             localStorageService.update('user',json.user); 
+              $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+        },1500);
+       
+        // $http.get(url.senty,{params:param}).success(function (data) {
+        //     if(!!data.mess){
+        //         $rootScope.$broadcast(AUTH_EVENTS.loginFailed,data.mess);
+        //         return;
+        //     }
+        //     Session.create(data);
+        //     localStorageService.update("rememberUser",{username:Session.username,password:Session.password});
+        //     localStorageService.update('user',data); 
+        //     $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+        // }).error(function(){
+        //     $rootScope.$broadcast(AUTH_EVENTS.loginFailed,'网络连接错误');
+        // });
     };
 
     authService.isAuthenticated = function () {
@@ -206,7 +223,9 @@ angular.module('services', [])
                 }
                 param.fq=myFqs.join(";");
             }
-            return $http.get(url.senty,{params:param});
+            return $http.get(url.senty,{params:param}).then(function(){
+                return {results:json.senty};
+            });
         },
         results: function(param,loading) {
             (loading==undefined||loading)&&$ionicLoading.show();
@@ -214,7 +233,10 @@ angular.module('services', [])
             param.cls="Solr";
             param.length=50;
             param.fun="result";
-            return $http.get(url.senty,{params:param});
+            //return $http.get(url.senty,{params:param});
+            return $http.get(url.senty,{params:param}).then(function(){
+                return json.senty;
+            });
         }
         // show:function () {
         //     $rootScope.$broadcast('SEARCH-SHOW');
@@ -298,24 +320,24 @@ angular.module('services', [])
   });
 
 
-// .factory('httpInterceptor',function ($q, $location, $rootScope,Session,AUTH_EVENTS) {
-//       return {
-//         'request': function (config) {
-//             config.headers = config.headers || {};
-//             if (!!Session.token) {
-//                 return $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-//                 config.headers.Authorization = 'Bearer ' + Session.token;
+// .FACTORY('HTTPINTERCEPTOR',FUNCTION ($Q, $LOCATION, $ROOTSCOPE,SESSION,AUTH_EVENTS) {
+//       RETURN {
+//         'REQUEST': FUNCTION (CONFIG) {
+//             CONFIG.HEADERS = CONFIG.HEADERS || {};
+//             IF (!!SESSION.TOKEN) {
+//                 RETURN $ROOTSCOPE.$BROADCAST(AUTH_EVENTS.NOTAUTHENTICATED);
+//                 CONFIG.HEADERS.AUTHORIZATION = 'BEARER ' + SESSION.TOKEN;
 //             }
-//             return config;
+//             RETURN CONFIG;
 //         },
-//         'responseError': function (response) {
-//             if (response.status === 401 || response.status === 403) {
+//         'RESPONSEERROR': FUNCTION (RESPONSE) {
+//             IF (RESPONSE.STATUS === 401 || RESPONSE.STATUS === 403) {
 //                     //如果之前登陆过
-//                 if (!!Session.token) {
-//                     $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+//                 IF (!!SESSION.TOKEN) {
+//                     $ROOTSCOPE.$BROADCAST(AUTH_EVENTS.NOTAUTHENTICATED);
 //                 }
 //             }
-//             return $q.reject(response);
+//             RETURN $Q.REJECT(RESPONSE);
 //         }
 //     };
 // });

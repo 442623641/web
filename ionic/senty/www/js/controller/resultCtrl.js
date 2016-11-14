@@ -8,15 +8,16 @@ angular.module('controllers')
   $scope.units=Session.relation;
   $scope.loadMore = function() {
       Solr.getData($scope.search.param,$scope.search.fqs,false)
-     .success(function(res){
+     //.success(function(res){
+      .then(function(res){
         $scope.moredata=!!res.results.length;
         $scope.search.param.start+=$scope.search.param.rows;
         $scope.negatives=$scope.negatives.concat(res.results);
      })
-     .error(function (data,status) {
-         console.log("Error occurred.  Status:" + status);
-     })
-     .finally(function() {
+     // .error(function (data,status) {
+     //     console.log("Error occurred.  Status:" + status);
+     // })
+     .then(function() {
         // 停止广播ion-refresher
         $scope.$broadcast('scroll.infiniteScrollComplete');
         $scope.loadingHide();
@@ -25,15 +26,16 @@ angular.module('controllers')
   $scope.doRefresh = function(animation) {
      $scope.search.param.start=0;
       Solr.getData($scope.search.param,$scope.search.fqs,animation)
-     .success(function(res){
+     //.success(function(res){
+      .then(function(res){
         $scope.negatives=res.results;
         $ionicScrollDelegate.resize();
         $scope.moredata=!!res.results.length;
      })
-     .error(function (data,status) {
-         console.log("Error occurred.  Status:" + status);
-     })
-     .finally(function() {
+     // .error(function (data,status) {
+     //     console.log("Error occurred.  Status:" + status);
+     // })
+     .then(function() {
         // 停止广播ion-refresher
         $scope.$broadcast('scroll.refreshComplete');
         $scope.loadingHide();

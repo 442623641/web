@@ -16,14 +16,16 @@ angular.module('controllers')
   };
   $scope.doRefresh = function(animation) {
 
-    Keys.getAll(Session.userID,animation).success(function(res){
+    Keys.getAll(Session.userID,animation)
+    //.success(function(res){
+    .then(function(res){
         $scope.keys =res;
         $ionicScrollDelegate.resize();
     })
-    .error(function (data, status) {
-        console.log("Error occurred.  Status:" + status);
-    })
-    .finally(function() {
+    // .error(function (data, status) {
+    //     console.log("Error occurred.  Status:" + status);
+    // })
+    .then(function() {
        // 停止广播ion-refresher
        $scope.$broadcast('scroll.refreshComplete');
        $scope.loadingHide();
