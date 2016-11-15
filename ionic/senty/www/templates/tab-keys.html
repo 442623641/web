@@ -60,7 +60,7 @@
                     <span ng-bind="keys.publicKeys.ThemeName"></span>
                     </div>
                     <ul class="resources">
-                      <li ng-repeat="item in keys.publicKeys.Items|filter:{KeyType:keysFilter.KeyType||undefined}" class="resource--talks">
+                      <li ng-repeat="item in keys.publicKeys.Items|filter:{KeyType:keysFilter.KeyType||undefined}" class="resource--talks" style="padding-bottom: .3rem;">
                        <a 
                       href="#/tab/result/{{item.Title}}/{{item.Text}}" 
                       class="resource__link">

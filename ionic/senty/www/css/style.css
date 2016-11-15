@@ -1365,3 +1365,6 @@ option{
     background-color: #53CAC3;
 }
 
+.item-note i{
+    padding-left: .6rem;
+}

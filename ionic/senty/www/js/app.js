@@ -54,20 +54,20 @@ var app=angular.module('app', ['ionic', 'ionic-toast','controllers',
   // if (ionic.Platform.isAndroid()) {  
   //   StatusBar.backgroundColorByHexString("#53cac3");  
   // }
-  // var notificationCallback = function(data) {
-  //   console.log('received data :' + data);
-  //   var notification = angular.fromJson(data);
-  //   //app 是否处于正在运行状态
-  //   var isActive = notification.notification;
+  var notificationCallback = function(data) {
+    console.log('received data :' + data);
+    var notification = angular.fromJson(data);
+    //app 是否处于正在运行状态
+    var isActive = notification.notification;
 
-  //   // here add your code
-  //   //ios
-  //   if (ionic.Platform.isIOS()) {
-  //     window.alert(notification);
-  //   } else {
-  //   //非 ios(android)
-  //   }
-  // };
+    // here add your code
+    //ios
+    if (ionic.Platform.isIOS()) {
+      window.alert(notification);
+    } else {
+    //非 ios(android)
+    }
+  };
     
     //$cordovaStatusbar.styleColor('#53cac3');  
   $ionicPlatform.ready(function() {

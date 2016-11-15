@@ -76,5 +76,4 @@ app.config(function($stateProvider, $urlRouterProvider,USER_ROLES,$httpProvider,
   $ionicConfigProvider.scrolling.jsScrolling(false);
   //$httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
   //$httpProvider.interceptors.push('httpInterceptor');
-
 });
