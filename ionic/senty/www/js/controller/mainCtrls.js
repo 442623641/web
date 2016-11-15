@@ -225,8 +225,15 @@ angular.module('controllers', [])
   }).then(function(modal) {
     $scope.aboutModal = modal;
   });
+  $ionicModal.fromTemplateUrl('templates/setting.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.settingModal = modal;
+  });
   $scope.$on('$destroy', function() {
     $scope.aboutModal.remove();
+    $scope.settingModal.remove();
   });
 })
 .controller('LoginCtrl', function($scope, $state,$ionicModal, $stateParams,Session,localStorageService,USER_ROLES,AuthService,AUTH_EVENTS) {
@@ -333,7 +340,7 @@ angular.module('controllers', [])
           LY:item.source_name,
           SCLX:"5",
           XGZZ:item.nickname,
-          JCSJ:item.timestamp,
+          JCSJ:item.timestamp||'2016-07-28 12:33:',
           SXZS:item.isharmful?"2":"4",
           LRZY:'',
           SGQY:"340000",

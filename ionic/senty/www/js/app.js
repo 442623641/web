@@ -21,7 +21,8 @@ var app=angular.module('app', ['ionic', 'ionic-toast','controllers',
   //'senty_release':'http://36.7.150.152:22016/Do.ashx',
   //'senty_development':'http://localhost:8100/Do.ashx',
   'senty_release':'http://139.196.8.187/magical/index.php/Menu/empty',
-  'senty_development':'http://localhost:8100/magical/index.php/Menu/empty',
+  //'senty_development':'http://localhost:8100/magical/index.php/Menu/empty',http://192.168.199.105/
+  'senty_development':'http://192.168.199.105:8100/magical/index.php/Menu/empty',
   
 })
 

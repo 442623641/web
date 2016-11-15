@@ -28,17 +28,19 @@ angular.module('starter.controllers')
 		$scope.purchases=MenusDbService.get({'purchase':{ '$eq' : true}});
     	$scope.purchaseModal.show();
   	}
-  // 	$ionicModal.fromTemplateUrl('templates/setup.html', {
-	 //    scope: $scope
-	 // }).then(function(modal) {
-	 //    $scope.setupModal = modal;
-	 // });
+  	$ionicModal.fromTemplateUrl('templates/setup.html', {
+	    scope: $scope
+	 }).then(function(modal) {
+	    $scope.setupModal = modal;
+	 });
 	$scope.openSetupModal=function(tag){
 		event.preventDefault();
 	    //animation&&$scope.loadingShow();
 	  	MenuService.getSetup(tag).success(function(res){
 	    	$scope.setup=res;
-	    	$scope.setupModal.show();
+	    	$scope.setup.minor=JSON.parse(res.minor);
+	    	$scope.setup.setup=JSON.parse(res.step);
+	    	//$scope.setupModal.show();
 	    })
 	    .error(function (data, status) {
             alert("网络连接失败");
@@ -46,8 +48,11 @@ angular.module('starter.controllers')
         })
         .finally(function() {
           	$scope.loadingHide();
-         });
+    });
   	}
+  	$scope.closeSetupModal=function(tag){
+		$scope.setupModal.hide();
+	};
 	$scope.menuChange=function(type,index){
 		$scope.menu=MenusDbService.get({'type':{ '$eq' : type}});
 		$scope.expand=0;

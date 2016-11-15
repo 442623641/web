@@ -12,7 +12,7 @@ angular.module('services', [])
     this.token=user.token;
     this.role=user.role;
     this.userID=user.userID;
-    this.relation=user.relation;
+    this.relation=[{DQDM:10023,DQMC:'中央纪委监察部'},{DQDM:10023,DQMC:'安徽省办公处'},{DQDM:10023,DQMC:'合肥市政府'}],//user.relation;
     this.yqKey="状元 AND (合肥 AND 地铁) OR (合肥 AND 房价) OR (北斗卫星)";
     this.yhKey="抢劫 OR 色狼 OR 猥亵 OR 受贿 OR 腐败 OR 贪污 OR 城管 OR 走私 OR 赔偿 OR 骚扰";
     this.relationID=user.DWDQ;
@@ -176,7 +176,7 @@ angular.module('services', [])
              Session.create(json.user);
              localStorageService.update("rememberUser",{username:Session.username,password:Session.password});
              localStorageService.update('user',json.user); 
-              $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+            $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
         },1500);
        
         // $http.get(url.senty,{params:param}).success(function (data) {

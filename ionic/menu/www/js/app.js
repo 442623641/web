@@ -99,15 +99,15 @@ angular.module('starter', ['lokijs','ionic', 'starter.controllers','ngCordova','
         }
       }
     })
-    .state('app.setup', {
-      url: '/playlists/:shopID/:tag',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/setup.html',
-          controller: 'SetupCtrl'
-        }
-      }
-    })
+    // .state('app.setup', {
+    //   url: '/playlists/:shopID/:tag',
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: 'templates/setup.html',
+    //       controller: 'SetupCtrl'
+    //     }
+    //   }
+    // })
     
   // .state('app.single', {
   //   url: '/playlists/:playlistId',

@@ -35,8 +35,7 @@
       <div class="list"  ng-class="{'waterfall':listType==2}">
         <div class="menu-item" 
         ng-repeat="item in menu track by $index">
-        <a class="image" href="#/app/playlists/2004/{{item.name}}">
-        
+        <a class="image" ng-click="openSetupModal('{{item.name}}')">     
           <img ng-src="{{item.link}}">
             <h3 class="item-name-2" ng-if="listType==1">{{item.name}}</h3>
         </a>

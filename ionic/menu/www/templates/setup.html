@@ -1,10 +1,18 @@
-<ion-view style="background: #fff;">
+<ion-modal-view style="background: #fff;" ng-controller="SetupCtrl">
  <!-- <ion-header-bar style="background: transparent;">
    <ion-nav-button 
    class="button button-clear button-light ion-ios-close-empty button-outline button-circle icon" 
    style="background: rgba(0,0,0,0.7);">
     </ion-nav-button>
   </ion-header-bar> -->
+  <ion-header-bar class="bar-diamond">
+   <button class="button button-clear button-light ion-ios-close-empty button-outline button-circle icon" 
+      ng-click="closePurchaseModal()">
+    </button>
+    <div class="title title-center header-item">
+      我的菜单
+    </div> 
+  </ion-header-bar>
   <div id="elastic" 
   class="elastic-image" 
   style="background-image: url('{{setup.photo}}')">
@@ -12,29 +20,6 @@
   <ion-content 
   elastic-image="elastic" class="padding" 
   style="background: transparent;">
- <!--  <div class="the-content">
-        <h2>{{setup.title}}</h2>
-        <p></p>
-      <p>Note: This implementation works by using a combination of background-size: cover and a variable height. This is not great performance wise. It should be re-written using only GPU-friendly properties (i.e. Translate, Scale) so the browser won't have to re-paint on scroll.</p>
-      <p>It should also be improved by using Request Animation Frame for the animation.</p>
-      <div class="list">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-        <div class="item">10</div>
-        <div class="item">12</div>
-        <div class="item">13</div>
-        <div class="item">14</div>
-        <div class="item">15</div>
-      </div>
-    </div>
- -->
     <div class="content__wrapper wrap the-content">
         <!-- <div class="recipe-header">
           <h2>{{setup.title}}</h2>
@@ -150,6 +135,5 @@
         <div class="tile-text">超级绿色思慕雪</div></a>
     </div>
   </div>
-
   </ion-content>
-</ion-view>
+</ion-modal-view>
