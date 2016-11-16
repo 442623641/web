@@ -1,0 +1,113 @@
+			<!-- 导航 -->
+			<div class="navbar no-border" style="background-color: transparent;">
+				<div class="navbar-inner">
+					<div class="left">
+						<a href="#" data-panel="left" class="open-panel link icon-only"><i
+							class="icon icon-white-user"></i></a>
+					</div>
+					<div class="center sliding">
+						<div class="searchbar">
+							<div class="searchbar-input">
+								<a href="#" data-popup=".popup-search" class="open-popup"><input
+									type="search" readonly="readonly" style="background-color:rgba(0,0,0,0.1)" placeholder="搜索" /></a>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						
+					</div>
+				</div>
+			</div>
+			<!-- 导航结束 -->
+			<div class="pages navbar-through toolbar-through">
+				<div data-page="home" class="page homepages">
+					<div class="page-content" style="padding-top: 0;">
+						<!-- Slider -->
+						<div class="swiper-container swiper-init" data-effect="slide"
+							data-pagination=".swiper-pagination" style="height: 45vh">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stackList.html?tag=提高免疫&type=tags"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_1.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">健康饮食,从这里开始</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stackList.html?tag=减肥食谱&type=tags"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_2.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">吃出苗条味</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stackList.html?tag=家常菜&type=tags"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_3.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">我们不做买卖,只做分享</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="market.html?marketID=172&name=上海江桥"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_4.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">价格全在这,买卖省心</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stack.html"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_5.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">海量食谱,等你来搜</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stackList.html?tag=西餐&type=tags"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_6.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">厨艺姿态,尽显风流</h2> </a>
+								</div>
+								<div class="swiper-slide swiper-slide-prev">
+									<a href="stackList.html?tag=家常菜&type=tags"><img
+										src="http://7xrjnb.com1.z0.glb.clouddn.com/images/photos/20160412_7.jpg?imageView2/2/w/450/h/350/interlace/1"
+										style="width: 100vw; height: 45vh;">
+										<h2 class="gallerytitle">周末啦,为老公孩子准备一份家常菜吧</h2> </a>
+								</div>
+							</div>
+							<div class="swiper-pagination" style="text-align: end;"></div>
+						</div>
+						<div class="card facebook-card" style="margin: 0;">
+							<div class="card-content">
+								<div class="card-content-inner">
+									<nav class="list-nav">
+										<ul>
+											<li class="icon-stack"><a href="stack.html">食谱</a></li>
+											<li class="icon-market"><a
+												href="market.html?marketID=172&name=上海江桥">今日菜价</a></li>
+											<li class="icon-prome"><a
+												href="stackList.html?tag=今日最新&sort=createTime">今日最新</a></li>
+											<li class="icon-video "><a href="menus2.html">视频</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<div class="wrap">
+							{{#each this}}
+								<section class="section flow {{this.title}}" style=" position: relative;">
+								  	<div class="hp-block" >
+								   	 <h3 >{{this.name}}</h3>
+								    <div class="previews-wrapper previews-more " style=" position: relative;">
+									{{#each this.data}}
+								     <div class="preview preview--recipe" name="li">
+								      <a class="" href="javascript:stackStep.load({{ID}})" >
+								       <div class="center-cropped-image" style="background-image:url({{pic}});" ></div>
+								       <div class="preview__desc">
+								        <h4>{{title}}</h4>
+								        <p>30分钟以内</p>
+								       </div></a>
+								     </div>
+									{{/each}}
+								    </div>
+								   </div>
+								  </section>
+								{{/each}}
+						</div>
+				</div>
+			</div>
+		</div>

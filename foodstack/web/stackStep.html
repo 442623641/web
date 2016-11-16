@@ -1,0 +1,82 @@
+<!-- 导航 -->
+<div class="navbar no-border ">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="#" class="link icon-only back"><i class="icon icon-back"></i></a>
+		</div>
+	</div>
+</div>
+<!-- 导航结束 -->
+<!-- 下面是正文 -->
+<div class="pages">
+	<div data-page="stackStep" id="stackStep" class="page page-stack-detail">
+		<div class="page-content stackStep" style="background: #fff; color: #464646;">
+			<!-- 		头部图片 -->
+			<div id="DetailImage">
+				<div class="detail-image" style="background-image: url({{photo}})">
+				</div>
+			</div>
+			<div class="content__wrapper wrap">
+				<div class="content-header">
+					<h2>{{title}}</h2>
+					{{#if tags[0]}}
+						<div class="content-desc">{{text}}</div>
+					{{/if}}
+					<div class="content-favo">
+						<i class="icon-heart"></i> <span>{{clicks}}</span> <span>{{favo_count}}</span>
+						<i class="icon-favo"></i>
+					</div>
+				</div>
+				<div class="content__item">
+					<div class="content__subtitle dotted">
+						<div class="content__item-author">
+							<img class="content__item-avatar" src="images/avatar.jpg">
+							<div class="content__item-name">收集,吃货小编</div>
+						</div>
+						<div class="content__text-block">{{comment}}</div>
+
+					</div>
+					<!-- 			  	时间难度 -->
+					<div class="recipe__desc dotted--bottom">
+					<p><span>难度:</span> <span style="padding-right: 3rem;">{{class}}</span> <span>时间:</span><span>{{time}}</span> </p>
+					</div>
+					<!-- 时间难度结束 -->
+					<!-- 			  	食材 -->
+					<div class="ingredients dotted--bottom recipe__text-block">
+						<h4>
+							<span> 食材</span><span>( </span><span>2</span><span></span><span>
+								份数</span><span>)</span>
+						</h4>
+						<table>
+							<tbody>
+								{{#each material}}
+								<tr>
+									<td>{{note}}</td>
+									<td>{{title}}</td>
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
+					<!-- 食材结束 -->
+					<!-- 				步骤 -->
+					<div id="Steps" class="steps-list">
+						{{#each step}}
+						<div class="step">
+							<h4>烹饪步骤 {{@index+1}}</h4>
+							<div class="step__wrapper cp_pic">
+								<img src="{{image}}">
+								<div class="step__desc">
+									<p>{{content}}</p>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+					<!-- 步骤结束 -->
+				</div>
+			</div>
+			<!-- 头部end -->
+		</div>
+	</div>
+</div>
